@@ -1,8 +1,13 @@
 import './globals.css'
 import type { Metadata } from 'next'
+
 import { Inter } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'breally',
@@ -16,7 +21,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={`${inter.variable} font-inter antialiased tracking-wide`}
+      >
+        <div className="flex flex-col min-h-screen overflow-hidden">
+          {children}
+        </div>
+      </body>
     </html>
   )
 }

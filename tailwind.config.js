@@ -7,6 +7,16 @@ module.exports = {
   ],
   theme: {
     extend: { 
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+      },
+      screens: {
+        'imageSize' : '516px',
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1536px',
+      },
       colors: {
         buttonPurple : '#DAC2F2',
         helpTextGreen: '#5EDC4B',

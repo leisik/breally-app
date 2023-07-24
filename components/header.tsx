@@ -1,7 +1,8 @@
 import Menu from './header/menu'
 import BrallyLogo from '@/public/logo.svg'
 import Image from 'next/image'
-import Link from 'next/link'
+import { MobileMenu } from './mobileMenu'
+import { ContactButton } from './header/contactButton'
 
 export default function Header() {
   return (
@@ -9,12 +10,10 @@ export default function Header() {
       <Image src={BrallyLogo} alt="brally-logo" width={0} height={0} />
       <Menu />
       <div className="mx-auto"></div>
-      <Link
-        href="mailto:hello@adchitects.co"
-        className="bg-buttonPurple rounded-[24px] w-[192px] h-[48px] text-textPrimary flex justify-center items-center"
-      >
-        Contact us
-      </Link>
+      <div className="hidden md:flex">
+        <ContactButton />
+      </div>
+      <MobileMenu />
     </div>
   )
 }
