@@ -3,11 +3,13 @@ import { useState } from 'react'
 import { emailRegex } from '@/utils/emailRegex'
 import Image from 'next/image'
 import Loader from '@/public/oval.svg'
+import Checkmark from '@/public/check-mark.svg'
 
 export default function Newsletter() {
   const [isLoading, setIsLoading] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [email, setEmail] = useState('')
+  const [sent, setSent] = useState(false)
 
   const handleAddToNewsletter = async (email: string) => {
     setIsSubmitting(true)
@@ -15,7 +17,7 @@ export default function Newsletter() {
       setIsLoading(true)
       try {
         const res = await addToNewsletter(email)
-        console.log(res)
+        if (res.status === 200) submitSuccess()
       } catch (error) {
         console.error(error)
       }
@@ -29,6 +31,13 @@ export default function Newsletter() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(e.target.value)
     setIsSubmitting(false)
+  }
+
+  const submitSuccess = () => {
+    setSent(true)
+    setTimeout(function () {
+      setSent(false)
+    }, 4000)
   }
 
   return (
@@ -64,6 +73,18 @@ export default function Newsletter() {
                 height={0}
                 sizes="100vh"
               />
+            ) : sent ? (
+              <div className="flex justify-center items-center text-textPrimary">
+                <p>Sent</p>
+                <Image
+                  src={Checkmark}
+                  alt="loader"
+                  className="w-4 h-4 ml-1.5"
+                  width={0}
+                  height={0}
+                  sizes="100vh"
+                />
+              </div>
             ) : (
               'Submit'
             )}

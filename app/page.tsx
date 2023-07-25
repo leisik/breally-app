@@ -1,10 +1,10 @@
 'use client'
-import Header from '@/components/header'
+import Header from '@/components/header/header'
 import { Subpage } from '@/types/subpage'
 import { getAllPages, getOnePage } from '@/api'
-import { Loader } from '@/components/loader'
+import { Loader } from '@/components/main/loader'
 import { useQuery } from 'react-query'
-import { Main } from '@/components/main'
+import { Main } from '@/components/main/main'
 
 export default function Home() {
   const handleGetSubpages = async () => {

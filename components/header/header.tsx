@@ -1,8 +1,8 @@
-import Menu from './header/menu'
+import Menu from './menu'
 import BrallyLogo from '@/public/logo.svg'
 import Image from 'next/image'
 import { MobileMenu } from './mobileMenu'
-import { ContactButton } from './header/contactButton'
+import { ContactButton } from './contactButton'
 import { Subpage } from '@/types/subpage'
 import { useRouter } from 'next/navigation'
 
