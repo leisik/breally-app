@@ -1,15 +1,20 @@
-import { items } from '../menuEntries'
+import { Subpage } from '@/types/subpage'
+import { createNameFromUrl } from '@/utils/createNameFromUrl'
 
-export default function Menu() {
+interface Props {
+  allPages: Subpage[]
+}
+
+export default function Menu({ allPages }: Props) {
   return (
-    <div className="hidden md:flex items-center pl-12 lg:pl-24 ">
-      {items.map((item) => {
+    <div className="hidden sm:flex items-center pl-12 md:pl-24 ">
+      {allPages.map((page) => {
         return (
           <div
-            className="text-textPrimary mr-6 lg:mr-12 cursor-pointer hover:opacity-75"
-            key={item.id}
+            className="text-textPrimary mr-6 md:mr-12 cursor-pointer hover:opacity-75 capitalize"
+            key={page.id}
           >
-            {item.name}
+            {createNameFromUrl(page.url)}
           </div>
         )
       })}

@@ -5,14 +5,18 @@ import { Popover, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
 import { useOutsideClick } from '@/hooks/useOutsideClick'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
-import { items } from './menuEntries'
 import BurgerMenu from '@/public/burger-menu.svg'
 import Image from 'next/image'
 import { ContactButton } from './header/contactButton'
 import BrallyLogoBright from '@/public/logo-bright.svg'
-import Link from 'next/link'
+import { Subpage } from '@/types/subpage'
+import { createNameFromUrl } from '@/utils/createNameFromUrl'
 
-export const MobileMenu = () => {
+interface Props {
+  allPages: Subpage[]
+}
+
+export const MobileMenu = ({ allPages }: Props) => {
   const [, setIsOpen] = useState(false)
   const ref: any = useRef(null)
 
@@ -53,7 +57,7 @@ export const MobileMenu = () => {
   })
 
   return (
-    <Popover className="md:hidden">
+    <Popover className="sm:hidden">
       {({ close }) => (
         <>
           <Popover.Button
@@ -87,13 +91,13 @@ export const MobileMenu = () => {
                     height={0}
                     className="text-white"
                   />
-                  {items.map((item) => {
+                  {allPages.map((page) => {
                     return (
                       <div
-                        className="text-textSecondary cursor-pointer hover:opacity-75 mt-4"
-                        key={item.id}
+                        className="text-textSecondary cursor-pointer hover:opacity-75 mt-4 capitalize"
+                        key={page.id}
                       >
-                        {item.name}
+                        {createNameFromUrl(page.url)}
                       </div>
                     )
                   })}
