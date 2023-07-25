@@ -3,7 +3,6 @@
 import React, { useState, useRef } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
-import { useOutsideClick } from '@/utils/useOutsideClick'
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 import BurgerMenu from '@/public/burger-menu.svg'
 import Image from 'next/image'
@@ -17,8 +16,7 @@ interface Props {
 }
 
 export const MobileMenu = ({ subPages }: Props) => {
-  const [, setIsOpen] = useState(false)
-  const ref: any = useRef(null)
+  const ref = useRef(null)
 
   const [touchStart, setTouchStart] = useState(null)
   const [touchEnd, setTouchEnd] = useState(null)
@@ -51,10 +49,6 @@ export const MobileMenu = ({ subPages }: Props) => {
       enableBodyScroll(e)
     }
   }
-
-  useOutsideClick(ref, () => {
-    setIsOpen(false)
-  })
 
   return (
     <Popover className="sm:hidden">

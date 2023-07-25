@@ -6,7 +6,7 @@ interface Props {
   testimonialData: Section
 }
 
-export default function Testimonial({ testimonialData }: Props) {
+export const Testimonial = ({ testimonialData }: Props) => {
   return (
     <div className="flex justify-center bg-backgroundSecondary px-3 py-[64px] sm:py-[128px]">
       <div className="flex flex-col items-start justify-around max-w-[416px] lg:max-w-[900px] text-xl md:text-2xl">

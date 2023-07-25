@@ -1,5 +1,5 @@
 'use client'
-import Header from '@/components/header/header'
+import { Header } from '@/components/header/header'
 import { Subpage } from '@/types/subpage'
 import { getAllPages, getOnePage } from '@/api'
 import { Loader } from '@/components/main/loader'

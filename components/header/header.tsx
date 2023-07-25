@@ -1,4 +1,4 @@
-import Menu from './menu'
+import { Menu } from './menu'
 import BrallyLogo from '@/public/logo.svg'
 import Image from 'next/image'
 import { MobileMenu } from './mobileMenu'
@@ -10,7 +10,7 @@ interface Props {
   subPages: Subpage[]
 }
 
-export default function Header({ subPages }: Props) {
+export const Header = ({ subPages }: Props) => {
   const router = useRouter()
   return (
     <div className="flex bg-backgroundPrimary border border-b border-textSecondary px-16 py-6">

@@ -6,7 +6,7 @@ interface Props {
   subPages: Subpage[]
 }
 
-export default function Menu({ subPages }: Props) {
+export const Menu = ({ subPages }: Props) => {
   return (
     <div className="hidden sm:flex items-center pl-12 md:pl-24 ">
       {subPages.map((page) => {

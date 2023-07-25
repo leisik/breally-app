@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Loader from '@/public/oval.svg'
 import Checkmark from '@/public/check-mark.svg'
 
-export default function Newsletter() {
+export const Newsletter = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [email, setEmail] = useState('')
