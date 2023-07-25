@@ -10,6 +10,7 @@ import { ContactButton } from './contactButton'
 import BrallyLogoBright from '@/public/logo-bright.svg'
 import { Subpage } from '@/types/subpage'
 import { createNameFromUrl } from '@/utils/createNameFromUrl'
+import Link from 'next/link'
 
 interface Props {
   subPages: Subpage[]
@@ -87,12 +88,13 @@ export const MobileMenu = ({ subPages }: Props) => {
                   />
                   {subPages?.map((page) => {
                     return (
-                      <div
+                      <Link
+                        href={page?.url}
                         className="text-textSecondary cursor-pointer hover:opacity-75 mt-4 capitalize"
                         key={page?.id}
                       >
                         {createNameFromUrl(page?.url)}
-                      </div>
+                      </Link>
                     )
                   })}
                   <ContactButton />
