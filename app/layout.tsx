@@ -1,6 +1,5 @@
 'use client'
 import './globals.css'
-import type { Metadata } from 'next'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
 
@@ -14,11 +13,6 @@ const inter = Inter({
 
 const queryClient = new QueryClient()
 
-export const metadata: Metadata = {
-  title: 'breally',
-  description: 'Recruitment task for Adchitects',
-}
-
 export default function RootLayout({
   children,
 }: {
@@ -27,6 +21,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <QueryClientProvider client={queryClient}>
+        <head>
+          <title>breally</title>
+          <meta name="description" content="Recruitment task for Adchitects" />
+        </head>
         <body
           className={`${inter.variable} font-inter antialiased tracking-wide`}
         >

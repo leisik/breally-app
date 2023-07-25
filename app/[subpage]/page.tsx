@@ -4,6 +4,9 @@ import React from 'react'
 export default function Page() {
   return (
     <div className="h-screen w-full flex flex-col justify-center items-center bg-backgroundPrimary text-textPrimary">
+      <head>
+        <title>empty page</title>
+      </head>
       <p>Nothing is here. Go back to homepage</p>
       <Link href="/">
         <button className="px-3 py-1 rounded-[24px] bg-backgroundSecondary text-textSecondary mt-2">
