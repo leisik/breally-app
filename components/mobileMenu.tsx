@@ -91,13 +91,13 @@ export const MobileMenu = ({ subPages }: Props) => {
                     height={0}
                     className="text-white"
                   />
-                  {subPages.map((page) => {
+                  {subPages?.map((page) => {
                     return (
                       <div
                         className="text-textSecondary cursor-pointer hover:opacity-75 mt-4 capitalize"
-                        key={page.id}
+                        key={page?.id}
                       >
-                        {createNameFromUrl(page.url)}
+                        {createNameFromUrl(page?.url)}
                       </div>
                     )
                   })}

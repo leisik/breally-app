@@ -12,11 +12,11 @@ export default function Menu({ subPages }: Props) {
       {subPages.map((page) => {
         return (
           <Link
-            href={page.url}
+            href={page?.url}
             className="text-textPrimary mr-6 md:mr-12 cursor-pointer hover:opacity-75 capitalize"
-            key={page.id}
+            key={page?.id}
           >
-            {createNameFromUrl(page.url)}
+            {createNameFromUrl(page?.url)}
           </Link>
         )
       })}

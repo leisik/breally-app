@@ -7,10 +7,10 @@ export default function Testimonial({ testimonialData }: any) {
       <div className="flex flex-col items-start justify-around max-w-[416px] lg:max-w-[900px] text-xl md:text-2xl">
         <Image src={QuotationMark} alt="quotation-mark" />
         <p className="text-textSecondary leading-[32px] md:leading-[40px] text-justify mt-[68px] mb-[96px]">
-          {testimonialData.text}
+          {testimonialData?.text}
         </p>
         <p className="text-textTertiaty leading-[29px]">
-          {testimonialData.author}
+          {testimonialData?.author}
         </p>
       </div>
     </div>
