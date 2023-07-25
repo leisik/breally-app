@@ -6,19 +6,19 @@ import { ContactButton } from './header/contactButton'
 import { Subpage } from '@/types/subpage'
 
 interface Props {
-  allPages: Subpage[]
+  subPages: Subpage[]
 }
 
-export default function Header({ allPages }: Props) {
+export default function Header({ subPages }: Props) {
   return (
     <div className="flex bg-backgroundPrimary border border-b border-textSecondary px-16 py-6">
       <Image src={BrallyLogo} alt="brally-logo" width={0} height={0} />
-      <Menu allPages={allPages} />
+      <Menu subPages={subPages} />
       <div className="mx-auto"></div>
       <div className="hidden sm:flex">
         <ContactButton />
       </div>
-      <MobileMenu allPages={allPages} />
+      <MobileMenu subPages={subPages} />
     </div>
   )
 }

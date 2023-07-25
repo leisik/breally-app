@@ -13,10 +13,10 @@ import { Subpage } from '@/types/subpage'
 import { createNameFromUrl } from '@/utils/createNameFromUrl'
 
 interface Props {
-  allPages: Subpage[]
+  subPages: Subpage[]
 }
 
-export const MobileMenu = ({ allPages }: Props) => {
+export const MobileMenu = ({ subPages }: Props) => {
   const [, setIsOpen] = useState(false)
   const ref: any = useRef(null)
 
@@ -91,7 +91,7 @@ export const MobileMenu = ({ allPages }: Props) => {
                     height={0}
                     className="text-white"
                   />
-                  {allPages.map((page) => {
+                  {subPages.map((page) => {
                     return (
                       <div
                         className="text-textSecondary cursor-pointer hover:opacity-75 mt-4 capitalize"
