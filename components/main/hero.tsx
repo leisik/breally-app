@@ -7,10 +7,10 @@ interface Props {
 
 export const Hero = ({ heroData }: Props) => {
   return (
-    <div className="flex flex-col md:flex-row w-full justify-center items-center bg-backgroundPrimary pt-[64px] sm:pt-[128px] pb-0: imageSize:pb-[152px]">
-      <p className="w-full max-w-[516px] text-3xl md:text-5xl text-center md:text-left text-textPrimary leading-[40px] md:leading-[64px] pr-0 md:pr-6 pb-6 md:pb-0 px-3">
+    <section className="flex flex-col md:flex-row w-full justify-center items-center bg-backgroundPrimary pt-[64px] sm:pt-[128px] pb-0: imageSize:pb-[152px]">
+      <h1 className="w-full max-w-[516px] text-3xl md:text-5xl text-center md:text-left text-textPrimary leading-[40px] md:leading-[64px] pr-0 md:pr-6 pb-6 md:pb-0 px-3">
         {heroData?.text}
-      </p>
+      </h1>
       {heroData?.img && (
         <Image
           src={heroData?.img}
@@ -21,6 +21,6 @@ export const Hero = ({ heroData }: Props) => {
           className="w-full h-full max-w-[516px] max-h-[384px] object-cover"
         />
       )}
-    </div>
+    </section>
   )
 }

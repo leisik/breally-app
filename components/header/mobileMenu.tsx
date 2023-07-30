@@ -1,9 +1,8 @@
 'use client'
 
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 import BurgerMenu from '@/public/burger-menu.svg'
 import Image from 'next/image'
 import { ContactButton } from './contactButton'
@@ -17,8 +16,6 @@ interface Props {
 }
 
 export const MobileMenu = ({ subPages }: Props) => {
-  const ref = useRef(null)
-
   const [touchStart, setTouchStart] = useState(null)
   const [touchEnd, setTouchEnd] = useState(null)
 
@@ -27,7 +24,6 @@ export const MobileMenu = ({ subPages }: Props) => {
   const onTouchStart = (e: any) => {
     setTouchEnd(null)
     setTouchStart(e.targetTouches[0].clientX)
-    disableBodyScroll(e)
   }
 
   const onTouchMove = (e: any) => setTouchEnd(e.targetTouches[0].clientX)
@@ -47,7 +43,6 @@ export const MobileMenu = ({ subPages }: Props) => {
 
     if (isSwipeDown) {
       closeFunction()
-      enableBodyScroll(e)
     }
   }
 
@@ -78,7 +73,7 @@ export const MobileMenu = ({ subPages }: Props) => {
           >
             <Popover.Panel className="fixed z-50 transform -translate-x-full -right-[156px] top-0 h-screen w-[156px]">
               <div className="h-full bg-backgroundSecondary shadow md:hidden transform transition duration-150 ease-in-out z-50">
-                <div className="py-8 flex flex-col h-full items-center">
+                <nav className="py-8 flex flex-col h-full items-center">
                   <Image
                     src={BrallyLogoBright}
                     alt="brally-logo"
@@ -98,7 +93,7 @@ export const MobileMenu = ({ subPages }: Props) => {
                     )
                   })}
                   <ContactButton />
-                </div>
+                </nav>
               </div>
             </Popover.Panel>
           </Transition>

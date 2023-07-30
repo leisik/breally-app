@@ -21,11 +21,17 @@ export const Main = ({ homePage }: Props) => {
     })
   }, [homePage])
 
-  return (
-    <>
-      <Hero heroData={heroData} />
-      <Testimonial testimonialData={testimonialData} />
-      <Newsletter />
-    </>
-  )
+  const fruits = new Map<string, JSX.Element>([
+    [
+      'testimonial',
+      <Testimonial testimonialData={testimonialData} key={'testimonial'} />,
+    ],
+    ['newsletter', <Newsletter key={'newsletter'} />],
+    ['hero', <Hero heroData={heroData} key={'hero'} />],
+  ])
+
+  const renderInCorrectOrder = () =>
+    homePage?.sections.map((section) => fruits.get(section?.type))
+
+  return <main>{renderInCorrectOrder()}</main>
 }

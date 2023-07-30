@@ -8,7 +8,7 @@ interface Props {
 
 export const Menu = ({ subPages }: Props) => {
   return (
-    <div className="hidden sm:flex items-center pl-12 md:pl-24 ">
+    <nav className="hidden sm:flex items-center pl-12 md:pl-24 ">
       {subPages.map((page) => {
         return (
           <Link
@@ -20,6 +20,6 @@ export const Menu = ({ subPages }: Props) => {
           </Link>
         )
       })}
-    </div>
+    </nav>
   )
 }

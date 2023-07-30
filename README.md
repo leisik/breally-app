@@ -1,6 +1,6 @@
 ## leisik x Adchitects
 
-Frontend repository for Recruitment task for Adchitects 
+Frontend repository for Recruitment task for Adchitects
 
 ## Getting Started
 
