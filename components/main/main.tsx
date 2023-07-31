@@ -21,7 +21,7 @@ export const Main = ({ homePage }: Props) => {
     })
   }, [homePage])
 
-  const fruits = new Map<string, JSX.Element>([
+  const pageSections = new Map<string, JSX.Element>([
     [
       'testimonial',
       <Testimonial testimonialData={testimonialData} key={'testimonial'} />,
@@ -31,7 +31,7 @@ export const Main = ({ homePage }: Props) => {
   ])
 
   const renderInCorrectOrder = () =>
-    homePage?.sections.map((section) => fruits.get(section?.type))
+    homePage?.sections.map((section) => pageSections.get(section?.type))
 
   return <main>{renderInCorrectOrder()}</main>
 }
